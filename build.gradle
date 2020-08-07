@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.2.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'mysql:mysql-connector-java'
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+	implementation 'org.json:json:20090211'
+	implementation 'org.mapstruct:mapstruct-jdk8:1.2.0.Final'
+	implementation 'org.mapstruct:mapstruct-processor:1.2.0.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.2.0.Final'
+	implementation "org.projectlombok:lombok"
+	implementation 'org.springframework.data:spring-data-redis'
+	implementation 'redis.clients:jedis'
+	implementation 'org.springframework.kafka:spring-kafka'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+
+}
+
+test {
+	useJUnitPlatform()
+}
